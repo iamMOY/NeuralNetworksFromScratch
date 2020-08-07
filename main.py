@@ -1,4 +1,4 @@
-import numpy as np
+import numpy 
 import scipy.special
 
 import matplotlib.pyplot
@@ -10,8 +10,8 @@ class neuralNetwork:
         self.hnotes = hiddennotes
         self.onodes = outputnodes
 
-        self.wih = np.normal(0.0, pow(self.inodes, -0.5), (self.hnodes, self.inodes))
-        self.who = np.normal(0.0,pow(self.hnodes,-0.5),(self.onodes,self.hnodes))
+        self.wih = numpy.normal(0.0, pow(self.inodes, -0.5), (self.hnodes, self.inodes))
+        self.who = numpy.normal(0.0,pow(self.hnodes,-0.5),(self.onodes,self.hnodes))
 
         self.lr = learningrate
 
@@ -20,13 +20,13 @@ class neuralNetwork:
         pass
 
     def train(self,input_list , target_list):
-        inputs = np.array(input_list , ndmin=2).T
-        target = np.array(target_list,ndmin=2).T 
+        inputs = numpy.array(input_list , ndmin=2).T
+        target = numpy.array(target_list,ndmin=2).T 
 
-        hidden_inputs = np.dot(self.wih , inputs)
+        hidden_inputs = numpy.dot(self.wih , inputs)
         hidden_outputs = self.activation_function(hidden_inputs)
 
-        final_inputs = np.dot(self.who , hidden_outputs)
+        final_inputs = numpy.dot(self.who , hidden_outputs)
         final_output = self.activation_function(final_inputs)
 
         output_errors = targets ­ - final_outputs
