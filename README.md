@@ -1,3 +1,3 @@
 # NeuralNetworksFromScratch
 
-The code is very self explainatory 
+The code is self explainatory 
